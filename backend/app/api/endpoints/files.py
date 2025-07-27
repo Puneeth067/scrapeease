@@ -87,3 +87,4 @@ async def delete_scraped_data(scrape_id: str):
         }
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Deletion failed: {str(e)}")
+    
