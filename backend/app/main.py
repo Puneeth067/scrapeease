@@ -1,9 +1,9 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from app.api.endpoints import scraping, files
 from app.core.config import settings
 import os
+from app.api.endpoints import scraping_router, files_router
 
 app = FastAPI(
     title="ScrapeEase API",
@@ -11,7 +11,6 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# CORS middleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=settings.ALLOWED_HOSTS,
@@ -20,13 +19,11 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Mount static files
 os.makedirs("data", exist_ok=True)
 app.mount("/downloads", StaticFiles(directory="data"), name="downloads")
 
-# Include routers
-app.include_router(scraping.router, prefix="/api/v1", tags=["scraping"])
-app.include_router(files.router, prefix="/api/v1", tags=["files"])
+app.include_router(scraping_router, prefix="/api/v1", tags=["scraping"])
+app.include_router(files_router, prefix="/api/v1", tags=["files"])
 
 @app.get("/")
 async def root():

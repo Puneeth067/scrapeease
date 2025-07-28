@@ -1,12 +1,78 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🖼️ ScrapeEase Frontend
 
-Currently, two official plugins are available:
+This is the frontend of **ScrapeEase**, a web-based tool that allows users to extract tabular data from any website using AI.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Built with:
 
-## Expanding the ESLint configuration
+- ⚡ Vite
+- ⚛️ React
+- 💨 Tailwind CSS
+- 🔗 Axios
+- [ ] 🚀 Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1. Install dependencies
+
+```bash
+npm install
+```
+
+### 2. Start development server
+
+```bash
+npm run dev
+```
+
+This runs the app at [http://localhost:5173](http://localhost:5173) by default.
+
+---
+
+## 🌐 Environment Variables
+
+Create a `.env` file in the root of the frontend directory:
+
+```
+VITE_API_BASE_URL=http://localhost:8000
+```
+
+Update this if your backend is hosted elsewhere.
+
+---
+
+## 🔍 Project Structure
+
+```
+src/
+│
+├── components/     # UI components
+├── pages/          # Route-based pages
+├── api/            # Axios config & API handlers
+├── App.jsx         # Root component
+└── main.jsx        # Vite entry point
+```
+
+---
+
+## 📦 Build for Production
+
+```bash
+npm run build
+```
+
+---
+
+## 🛠️ Tools Used
+
+- React Router
+- Axios
+- TailwindCSS
+- Vite
+
+---
+
+## 📸 Feature Overview
+
+- 🌐 URL validation
+- 📄 Table preview
+- 🤖 AI-based scraping
+- 📤 Export options
