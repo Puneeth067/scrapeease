@@ -7,7 +7,8 @@ sqlalchemy==1.4.49
 alembic==1.12.1
 
 # Data handling
-pydantic==1.10.13
+pydantic-settings==2.1.0
+pydantic>=2.0
 python-multipart==0.0.9
 passlib[bcrypt]==1.7.4
 redis==4.6.0
